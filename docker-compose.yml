@@ -1,0 +1,47 @@
+version: '3'
+services:
+  web:
+    build: ./
+    ports:
+      - "86:80"
+    depends_on:
+      - db
+    expose:
+      - 9010
+    volumes:
+      - ./:/var/www/html/
+      - ./local/php.ini:/usr/local/etc/php/php.ini
+      - ./local/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    networks:
+      - Gexem_network
+
+  db:
+    image: mysql
+    ports:
+      - "3326:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Gexem_db
+      MYSQL_USER: danworker
+      MYSQL_PASSWORD: 1992/409
+    volumes:
+      - "./db:/var/lib/mysql"
+    networks:
+      - Gexem_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8086:80'
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+    networks:
+      - Gexem_network
+
+networks:
+  Gexem_network:
+    driver: bridge
