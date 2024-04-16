@@ -46,7 +46,7 @@ For development, you can find and customize this inside app >> .env:
 
 ```
 # to use mysql:
-DATABASE_URL="mysql://yassine:123456@db:3306/my_cabinet_db?serverVersion=8.0.27"
+DATABASE_URL="mysql://badr:123456@db:3306/my_cabinet_db?serverVersion=8.0.27"
 ```
 
 ### Installing Doctrine :
@@ -135,3 +135,6 @@ class AppFixtures extends Fixture
 
             $manager->persist($user);
         }
+## Create Auth:
+ symfony make:auth
+ 1
