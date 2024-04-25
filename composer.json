@@ -10,17 +10,23 @@
         "doctrine/doctrine-bundle": "^2.6",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.12",
+        "easycorp/easyadmin-bundle": "^4.10",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.0.*",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
         "symfony/flex": "^2",
+        "symfony/form": "6.0.*",
         "symfony/framework-bundle": "6.0.*",
+        "symfony/mailer": "6.0.*",
         "symfony/password-hasher": "6.0.*",
         "symfony/proxy-manager-bridge": "6.0.*",
         "symfony/runtime": "6.0.*",
         "symfony/security-bundle": "6.0.*",
-        "symfony/yaml": "6.0.*"
+        "symfony/validator": "6.0.*",
+        "symfony/webpack-encore-bundle": "^1.17",
+        "symfony/yaml": "6.0.*",
+        "symfonycasts/reset-password-bundle": "^1.14"
     },
     "config": {
         "allow-plugins": {
@@ -77,6 +83,7 @@
         "doctrine/doctrine-fixtures-bundle": "^3.5",
         "symfony/maker-bundle": "^1.50",
         "symfony/stopwatch": "6.0.*",
-        "symfony/web-profiler-bundle": "6.0.*"
+        "symfony/web-profiler-bundle": "6.0.*",
+        "zenstruck/foundry": "^1.37"
     }
 }
