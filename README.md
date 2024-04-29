@@ -78,45 +78,44 @@ $ symfony make:migration
 $ symfony d:m:m
 
 //installation d'une nouvelle application symfony
-symfony new GExams --full --version=6.0
+
+- symfony new GExams --full --version=6.0
 
 modifier le fichier .env
 
 //creation de la base de données selon les paramètres du fichier .env
-symfony console doctrine:database:create
 
-install certificat
-symfony server:ca:install
-
-start server
-symfony server:start -d
+- symfony console doctrine:database:create
+- install certificat
+- symfony server:ca:install
+- start server
+- symfony server:start -d
 
 navigate to server
 start https://127.0.0.1:8000
 
 stop server
-symfony server:stop
+
+- symfony server:stop
 
 creation de toutes les entités et des relation
 
-symfony console make:entity
+- symfony console make:entity
 
 creation des tables sur la base de données
-symfony console make:migration
-symfony console doctrine:migrations:migrate
+
+- symfony console make:migration
+- symfony console doctrine:migrations:migrate
 
 create securité
-symfony console make:user >>> User yes email yes
-symfony console make:entity >>> User username string 50 no
 
-install authenticator
-symfony console make:auth >>> 1 AppAuthenticator SecurityController yes
-
-symfony console make:registration >>> yes no yes
-
-composer require symfonycasts/reset-password-bundle
-
-symfony console make:reset-password >>> \n email@fac.ma "gestion exams"
+- symfony console make:user >>> User yes email yes
+- symfony console make:entity >>> User username string 50 no
+- install authenticator
+- symfony console make:auth >>> 1 AppAuthenticator SecurityController yes
+- symfony console make:registration >>> yes no yes
+- composer require symfonycasts/reset-password-bundle
+- symfony console make:reset-password >>> \n email@fac.ma "gestion exams"
 
 remplacer le text dans le fichier \\src\\Security\\AppAuthenticator.php
 //return new RedirectResponse($this->urlGenerator->generate('some_route'))
@@ -125,16 +124,16 @@ remplacer le text dans le fichier \\src\\Security\\AppAuthenticator.php
 remplacer le text dans le fichier
 \config\packages\\security.yaml # - { path: ^/admin, roles: ROLE_ADMIN } - { path: ^/admin, roles: ROLE_USER }
 
-symfony console make:migration
-symfony console doctrine:migrations:migrate
+- symfony console make:migration
+- symfony console doctrine:migrations:migrate
 
-installer les fixtures
-composer require zenstruck/foundry --dev
+- installer les fixtures
+- composer require zenstruck/foundry --dev
 
 faire la même chose pour toutes les entité et pour User aussi
-symfony console make:factory 0
 
-composer require orm-fixtures --dev
+- symfony console make:factory 0
+- composer require orm-fixtures --dev
 
 ajouter use dans le fichier appFixtures.php pour toutes les entités et User aussi
 
@@ -149,8 +148,8 @@ return [
 // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
 'nom' => self::faker()->lastname(),
 'prenom' => self::faker()->firstname(),
- 'filiere' => FiliereFactory::randomOrCreate(),
- 'cin' => self::faker()->realText(10),
+'filiere' => FiliereFactory::randomOrCreate(),
+'cin' => self::faker()->realText(10),
 ];
 
 Modifier le contenu de la procedure getDefaults de UserFactory avec le code suivant
@@ -163,12 +162,13 @@ return [
 ];
 
 charger les fixtures
-symfony console doctrine:fixtures:load
+
+- symfony console doctrine:fixtures:load
 
 installation de la dash board
 
-composer require admin
-symfony console make:admin:dashboard \n \n
+- composer require admin
+- symfony console make:admin:dashboard \n \n
 
 ajouter les classes suivantes aux fichier DashboardController
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -203,17 +203,19 @@ ajouter ces deux procedures au DashboardController
     }
 
 ajouter le controller admin a toutes les entités
-symfony console make:admin:crud
+
+- symfony console make:admin:crud
 
 installer node js (logiciel a chercher sur internet)
-composer require symfony/webpack-encore-bundle
-yarn install
-yarn add jquery
-yarn add sass-loader sass --dev
-yarn add postcss-loader autoprefixer --dev
-npm install --save-dev @fortawesome/fontawesome-free
-yarn add file-loader@^6.0.0 --dev
-yarn add bootstrap
+
+- composer require symfony/webpack-encore-bundle
+- yarn install
+- yarn add jquery
+- yarn add sass-loader sass --dev
+- yarn add postcss-loader autoprefixer --dev
+- npm install --save-dev @fortawesome/fontawesome-free
+- yarn add file-loader@^6.0.0 --dev
+- yarn add bootstrap
 
 ajouter ces lignes a app.js
 import $ from 'jquery';
@@ -265,5 +267,5 @@ et le fichier ChangeLangueController.php
 remplacer les templates surtout change langue
 ajouter les fichiers messages.ar.yaml, fr, en et es
 
-symfony console cache:clear
-yarn run build
+- symfony console cache:clear
+- yarn run build
