@@ -51,7 +51,7 @@ final class UserFactory extends ModelFactory
         return [
             'email' => 'AdminDesktop@danworker.com',
             'roles' => ['ROLE_ADMIN'],
-            'locale' => 'Rabat/Salé',
+            'locale' => 'fr',
             'is_verified' => true,
             'password' => '$2y$13$w7usfxJhm1MP8qjT8TDNzOq.UuYWFuZszfwqX/agMwG8JeqWgacZ.',
             'username' => 'Admin',
