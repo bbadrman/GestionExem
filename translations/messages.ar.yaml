@@ -1,3 +1,10 @@
+ROLE_USER: المستخدمين
+ROLE_ETUDIANT: طالب
+ROLE_APOGE: أوج
+ROLE_ADMIN: مدير
+ROLE_PROF: مدرس
+ROLE_CHEF: مدير القطاع
+
 Etudiant: طالب
 Filiere: شعبة
 Module: المادة
