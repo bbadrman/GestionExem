@@ -1,0 +1,25 @@
+<style>
+#listeRoles {
+    margin: auto;
+    margin-top: 20px;
+}
+</style>
+
+{% set roles = app.user.getRoles(TRUE) %}
+{% if roles|length > 2 %}
+    <select id="listeRoles">
+        {% for a in roles %}
+            {% if a != 'ROLE_USER' %}
+                <option value="{{ a }}" 
+                {% if a == app.session.get('_role') %} selected {% endif %}>
+                {{ a|trans }}
+                </option>
+            {% endif %}
+        {% endfor %}
+    </select>
+{% endif %}
+
+{# this entry is belon to the entry existin in our webpack configuration #}
+{% block javascripts %}
+     {{ encore_entry_script_tags('roles') }}
+{% endblock %}

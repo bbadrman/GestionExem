@@ -8,14 +8,18 @@ use Doctrine\Persistence\Event\LifecycleEventArgs;
 
 use Symfony\Component\Security\Core\Security;
 use App\Entity\User;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class EntitySubscriber  implements EventSubscriberInterface
 {
     
 private $security;
-public function __construct (Security $security)
+private $passwordHasher;
+
+public function __construct (Security $security, UserPasswordHasherInterface $passwordHasher)
 {
     $this->security = $security;
+    $this->passwordHasher = $passwordHasher;
 }   
     // this method can only return the event names; you cannot define a
     // custom method name to execute when each event triggers
@@ -41,6 +45,14 @@ public function __construct (Security $security)
         $entity = $args->getEntity();
 
         if (($entity instanceof User)) {
+
+            $entity->setPassword(
+                $this->passwordHasher->hashPassword(
+                    $entity,
+                    $entity->getPassword()
+                )
+                );
+
             $entity->setLocale('fr_FR');
           
         }

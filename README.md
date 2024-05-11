@@ -132,7 +132,7 @@ remplacer le text dans le fichier
 
 faire la même chose pour toutes les entité et pour User aussi
 
-- symfony console make:factory 0
+- symfony console make:factory
 - composer require orm-fixtures --dev
 
 ajouter use dans le fichier appFixtures.php pour toutes les entités et User aussi
@@ -269,3 +269,6 @@ ajouter les fichiers messages.ar.yaml, fr, en et es
 
 - symfony console cache:clear
 - yarn run build
+
+USER => AdminDesktop@danworker.com
+PASS => 123456

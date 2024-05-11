@@ -1,10 +1,9 @@
 {% extends '@!EasyAdmin/layout.html.twig' %}
 
-
 {% block content_top_header %}
 	<div class="content-search">
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-3">
 				{% if has_search %}
 					{% block search %}
 
@@ -52,15 +51,20 @@
 					{% endblock search %}
 				{% endif %}
 			</div>
-			<div
-				class="col-md-5">
-
+			<div class="col-md-6">
 				{#   Modification effectuée sur le layout pour insérer le langue switcher #}
 				{% block langue_switcher %}
 					{% include 'changeLangue.html.twig' %}
 				{% endblock langue_switcher %}
 				{# fin de la modification #}
+			</div>
 
+			<div class="col-md-3">
+				{#   Modification effectuée sur le layout pour insérer le langue switcher #}
+				{% block role_switcher %}
+					{% include 'changeRole.html.twig' %}
+				{% endblock role_switcher %}
+				{# fin de la modification #}
 			</div>
 		</div>
 	</div>

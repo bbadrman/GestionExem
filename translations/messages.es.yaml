@@ -1,3 +1,9 @@
+ROLE_USER: Usuarios
+ROLE_ETUDIANT: Alumno
+ROLE_APOGE: Apogeo
+ROLE_ADMIN: Administrador
+ROLE_PROF: Maestro
+ROLE_CHEF: Administrador del sector
 
 Etudiants: Estudiantes
 Filieres: Ramas
@@ -8,9 +14,9 @@ User: Usuario
 Dashboard: Gestion de examenes
 security:
   reset-password: Recuperar contraseña
-  forgetten-password: Olbido mi contraseña 
+  forgetten-password: Olbido mi contraseña
   enter-email: Entre su correo electrónico
-  send-email:  Envíe el enlace para recuperar la contraseña
+  send-email: Envíe el enlace para recuperar la contraseña
   email: Correo electrónico
   password: Contraseña
   username: Apellido y nombre del usuario

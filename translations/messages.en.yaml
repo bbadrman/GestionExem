@@ -1,3 +1,10 @@
+ROLE_USER: Users
+ROLE_ETUDIANT: Student
+ROLE_APOGE: Apogee
+ROLE_ADMIN: Administrator
+ROLE_PROF: Teacher
+ROLE_CHEF: Sector Admin
+
 Etudiants: Students
 Filieres: Sectors
 Users: Users
@@ -7,9 +14,9 @@ User: User
 Dashboard: Exams Management
 security:
   reset-password: Reset Password
-  forgetten-password: I forget my password 
+  forgetten-password: I forget my password
   enter-email: Enter your email
-  send-email:  Send link to reset the password
+  send-email: Send link to reset the password
   email: Email
   password: Password
   username: Username
@@ -19,4 +26,3 @@ security:
   register: Register me
   accept: I accept all
   terms: the terms
-  

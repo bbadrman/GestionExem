@@ -1,3 +1,9 @@
+ROLE_USER: Utilisateurs
+ROLE_ETUDIANT: Étudiant
+ROLE_APOGE: Apogée
+ROLE_ADMIN: Administrateur
+ROLE_PROF: Professeur
+ROLE_CHEF: Administrateur de secteur
 
 Etudiants: Etudiants
 Filieres: Filières
@@ -10,7 +16,7 @@ security:
   reset-password: Récupérer le mot de passe
   forgetten-password: Mot de passe oublié
   enter-email: Tapez votre E-mail
-  send-email:  Envoyez le lien pour récupérer le mot de passe
+  send-email: Envoyez le lien pour récupérer le mot de passe
   email: E-mail
   password: Mot de passe
   username: Nom et prénom de l'utilisateur
@@ -18,5 +24,5 @@ security:
   login: Se connecter
   dont-have-account: Je n'ai pas de compte
   register: S'inscrire
-  accept: J'accepte toutes 
+  accept: J'accepte toutes
   terms: les conditions d'utilisation
